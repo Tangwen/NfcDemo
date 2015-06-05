@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NfcDemo</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_detach_nfc">DetachNfcActivity</string>
+    <string name="title_activity_nfc_send_message">NfcSendMessageActivity</string>
+    <string name="title_activity_nfc_receive_message">NfcReceiveMessageActivity</string>
+</resources>

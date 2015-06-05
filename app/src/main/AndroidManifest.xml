@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.twm.pt.nfcdemo" >
+
+    <uses-permission android:name="android.permission.NFC" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- 註冊在應用程式外，系統所廣播出來的intent filter -->
+            <intent-filter>
+
+                <!-- 註冊僅處理NDEF Tag，並指定預設啟動的Activity與處理的Type -->
+                <action android:name="android.nfc.action.TAG_DISCOVERED"/>
+                <!--<action android:name="android.nfc.action.TECH_DISCOVERED"/>-->
+                <!--<action android:name="android.nfc.action.NDEF_DISCOVERED" />-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+
+
+
+        <activity
+            android:name=".activity.DetachNfcActivity"
+            android:label="@string/title_activity_detach_nfc" >
+        </activity>
+        <activity
+            android:name=".activity.NfcSendMessageActivity"
+            android:label="@string/title_activity_nfc_send_message" >
+        </activity>
+        <activity
+            android:name=".activity.NfcReceiveMessageActivity"
+            android:label="@string/title_activity_nfc_receive_message" >
+        </activity>
+    </application>
+
+</manifest>
